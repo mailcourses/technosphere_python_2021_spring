@@ -10,19 +10,19 @@
 - На все должны быть тесты в отдельном модуле.
 
 ## 2. Написать метакласс, который в начале названий всех атрибутов и методов (кроме магических) добавляет префикс "custom_" (+тесты).
-class CustomMeta():
+    class CustomMeta():
+        pass
 
-class CustomClass(metaclass=CustomMeta):
-    x = 50
+    class CustomClass(metaclass=CustomMeta):
+        x = 50
     
-    def line(self):
-        return 100
+        def line(self):
+            return 100
 
+    inst = CustomClass()
+    inst.custom_x
+    inst.custom_line()
 
-inst = CustomClass()
-inst.custom_x
-inst.custom_line()
-
-inst.x  # ошибка
-inst.line() # ошибка
+    inst.x  # ошибка
+    inst.line() # ошибка
 
